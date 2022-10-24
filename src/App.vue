@@ -5,13 +5,13 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue'
 import FirstOneName from './components/FirstOneName.vue'
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
+    HelloWorld,
     FirstOneName
   }
 }
