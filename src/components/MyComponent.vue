@@ -1,37 +1,18 @@
 <template>
-  <h3>prop传递数据</h3>
-  <p>{{ title }}</p>
-  <p>age={{ age }}</p>
-  <ul>
-    <li v-for="(item,index) in names " :key="index">
-      {{item}}
-    </li>
-  </ul>
+  <h3>{{msg}}</h3>
 </template>
 
 <script>
+import api from "../api/index"
 export default {
   name: "MyComponent",
-  props: {
-    title: {
-      type: String,
-      default: ""
-    },
-    age: {
-      type: Number,
-      default: 0
-    },
-    names: {
-      type: Array,
-      //数组和对象必须使用函数进行返回
-      default: function () {
-        return []
-      }
-    }
+  props:{
+    msg:String
+  },
+  mounted() {
+    api.getChengpin().then(res=>{
+      console.log(res.data)
+    })
   }
 }
 </script>
-
-<style scoped>
-
-</style>
